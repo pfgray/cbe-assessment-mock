@@ -32,7 +32,7 @@ const Assessment = () => (
       />
     </div>
     <div className="submit">
-      <button className="btn btn-warning"><i className="fa fa-envelope" />Send To LMS</button>
+      <button className="btn btn-warning"><i className="fa fa-send" /> Send To LMS</button>
     </div>
   </div>
 );
