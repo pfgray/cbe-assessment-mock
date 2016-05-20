@@ -5,7 +5,7 @@ import React from 'react';
 
 import './styles/main.less';
 
-import Header from './Header';
+import Header from './header/HeaderContainer';
 
 export default class App extends React.Component {
   constructor(props) {

@@ -20,6 +20,8 @@ module.exports = function(app) {
   app.route(['/*'])
     .get(function(req, res) {
       console.log('showing the index file:');
-      res.render('index.ejs');
+      res.render('index.ejs', {
+        lti: req.session.lti
+      });
     });
 };

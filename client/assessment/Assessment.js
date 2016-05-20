@@ -27,8 +27,8 @@ const Assessment = () => (
           showPrintMargin: false,
           fontSize: 18
         }}
-        height={600}
-        width={900}
+        height={'600px'}
+        width={'900px'}
       />
     </div>
     <div className="submit">

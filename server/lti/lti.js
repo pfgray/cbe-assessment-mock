@@ -28,9 +28,12 @@ exports.lti = function(req, res){
       } else {
         console.log("successfully validated lti launch");
         // store information about this launch:
-        // req.session.lti = {
-        //   resource_link_id: req.body.resource_link_id
-        // };
+        req.session.lti = {
+          resource_link_id: req.body.resource_link_id,
+          user: {
+            first: req.body.lis_person_name_given
+          }
+        };
         res.redirect(303, "/assessment");
       }
     });

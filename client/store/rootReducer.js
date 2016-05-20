@@ -1,4 +1,5 @@
+import { combineReducers } from 'redux';
 
-const reducer = (state, action) => state;
-
-export default reducer;
+export default combineReducers({
+  user: () => window.lti ? window.lti.user : null
+});

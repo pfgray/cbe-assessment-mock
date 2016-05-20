@@ -30,6 +30,9 @@ module.exports = function(app) {
   app.use(bodyParser.json());
   app.use(methodOverride());
   app.use(cookieParser());
+  app.use(session({
+    secret: 'keyboard cat'
+  }));
 
   if ('production' === env) {
     app.use(express.static(path.join(config.root, 'public')));
