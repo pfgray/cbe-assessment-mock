@@ -3,7 +3,7 @@ import React from 'react';
 
 const Header = ({ user }) => (
   <div className="header">
-    <div className="logo">CBE Assesser wat</div>
+    <div className="logo">CBE Assesser</div>
     {user ?
       <div className="user">{user.first}</div>
       : null}

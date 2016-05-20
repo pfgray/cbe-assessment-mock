@@ -3,7 +3,7 @@
  */
 module.exports = function(app) {
 
-  app.use('/api/assessment', function(){});
+  app.use('/api/assessment', require('./assessment'));
   app.use('/lti', require('./lti'));
   // app.use('/api/apps', require('./api/application'));
 
