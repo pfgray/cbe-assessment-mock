@@ -11,8 +11,6 @@ gulp.task('serve', function(){
   var bundle = require('./bundler.js');
   bundle();
 
-  console.log('uhhh...');
-
   gulp.watch(['server/**/*.js'], function(event){
     server.stop();
     server.run(['./server/server.js']);
