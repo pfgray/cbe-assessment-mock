@@ -30,6 +30,7 @@ exports.lti = function(req, res){
         // store information about this launch:
         req.session.lti = {
           resource_link_id: req.body.resource_link_id,
+          custom_achievement_service: req.body.custom_achievement_service,
           user: {
             first: req.body.lis_person_name_given
           }
