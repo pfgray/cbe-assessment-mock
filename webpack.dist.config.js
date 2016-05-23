@@ -10,7 +10,7 @@ var PATHS = {
 
 module.exports = {
     resolve: {
-      extensions: ['', '.js', '.ts', '.tsx'],
+      extensions: ['', '.js'],
       alias: {}
     },
     node: {
