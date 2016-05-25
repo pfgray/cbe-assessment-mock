@@ -10,7 +10,9 @@ const AssessmentSource = ({ result, updateResult }) => {
   return (
     <div className='assessment-result-container'>
       <div className='assessment-result-header'>
-        <Link className='btn btn-default' to={'/assessment'}>{'display'}</Link>
+        <Link className='btn btn-default' to={'/assessment'}>
+          <i className="fa fa-file-o" aria-hidden="true"></i> display
+        </Link>
       </div>
       <div>
         <AceEditor

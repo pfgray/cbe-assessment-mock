@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import AssessmentService from './AssessmentService';
 
 const Levels = [
-    "Incomplete", "Basic", "Proficient", "Mastered"
+  "Incomplete", "Basic", "Proficient", "Mastered"
 ];
 
 const renderResult = setLevel => result => (
@@ -13,11 +13,10 @@ const renderResult = setLevel => result => (
     {result.competencies.map(comp => (
       <div className="competency">
         <div className="statement">{comp.statement}</div>
-        <div>{comp.achievementLevel.label}</div>
         <div>
           {Levels.map(level => (
             <button className={classNames({
-                "btn btn-default": true,
+                "btn btn-info": true,
                 "faded": level !== comp.achievementLevel.label
               })}
               onClick={() => setLevel(result, comp, level)}>
@@ -50,7 +49,9 @@ const AssessmentDisplay = ({ result, updateResult }) => {
   return (
     <div className='assessment-result-container'>
       <div className='assessment-result-header'>
-        <Link className='btn btn-default' to={'/assessment/source'}>{'{} source'}</Link>
+        <Link className='btn btn-default' to={'/assessment/source'}>
+           <i className="fa fa-code" aria-hidden="true"></i> source
+        </Link>
       </div>
       <div className="bordered">
         {AssessmentService.parseResult(result, renderResult(changeResultLevel(updateResult)), renderError)}
