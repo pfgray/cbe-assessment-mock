@@ -1,33 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import brace from 'brace';
-import AceEditor from 'react-ace';
 import { assess, updateCompetencyResult } from './assessmentActions';
 
-import 'brace/mode/json';
-import 'brace/theme/monokai';
-
-const Assessment = ({ assessment, updateResult, assess }) => {
+const Assessment = ({ assessment, updateResult, assess, children }) => {
   console.log('got props: ', assessment);
   return (
     <div className="assessment">
       <div className="title">This is the assessment</div>
       <div>
-        <AceEditor
-          mode="json"
-          theme="monokai"
-          onChange={updateResult}
-          value={assessment.competencyResult}
-          name="UNIQUE_ID_OF_DIV"
-          editorProps={{ $blockScrolling: false }}
-          showGutter={false}
-          setOptions= {{
-            showPrintMargin: false,
-            fontSize: 18
-          }}
-          height={'600px'}
-          width={'900px'}
-        />
+        {React.cloneElement(children, {result: assessment.competencyResult, updateResult})}
       </div>
       <div className="submit">
         <button className="btn btn-warning" onClick={() => assess(assessment.competencyResult)}>
