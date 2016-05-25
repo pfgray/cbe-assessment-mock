@@ -10,6 +10,8 @@ import reducer from './store/rootReducer';
 import App from './App';
 import Welcome from './welcome/Welcome';
 import Assessment from './assessment/Assessment';
+import AssessmentSource from './assessment/AssessmentSource';
+import AssessmentDisplay from './assessment/AssessmentDisplay';
 
 const browserHistory = createBrowserHistory();
 const reduxRouterMiddleware = syncHistory(browserHistory);
@@ -25,7 +27,10 @@ const Routes = () => (
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Welcome}/>
-        <Route path="/assessment" component={Assessment}/>
+        <Route path="/assessment" component={Assessment} >
+          <IndexRoute component={AssessmentDisplay} />
+          <Route path="/assessment/source" component={AssessmentSource} />
+        </Route>
       </Route>
     </Router>
   </Provider>
