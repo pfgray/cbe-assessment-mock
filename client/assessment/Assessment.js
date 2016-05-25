@@ -17,7 +17,7 @@ const Assessment = ({ assessment, updateResult, assess }) => {
           mode="json"
           theme="monokai"
           onChange={updateResult}
-          value={JSON.stringify(assessment.competencyResult, null, 2)}
+          value={assessment.competencyResult}
           name="UNIQUE_ID_OF_DIV"
           editorProps={{ $blockScrolling: false }}
           showGutter={false}

@@ -5,7 +5,7 @@ import {
 import defaultAssessment from './defaultAssessment.js';
 
 const defaultState = {
-  competencyResult: defaultAssessment
+  competencyResult: JSON.stringify(defaultAssessment, null, 2)
 };
 
 const mergeIt = state => newState => Object.assign({}, state, newState);
